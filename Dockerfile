@@ -1,7 +1,6 @@
 FROM ghcr.io/linuxserver/baseimage-rdesktop-web:focal
 
 ENV \
-#   CUSTOM_PORT="8080" \
   GUIAUTOSTART="true" \
   HOME="/config"
 
@@ -10,13 +9,14 @@ RUN \
  echo "**** install packages ****" && \
     apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+    fonts-noto-color-emoji \
     jq  \
     libc6\ 
     libxss1 \
     libnss3 \
     obconf \
-#     numix-gtk-theme \
-#     lxappearance \
+    numix-gtk-theme \
+    lxappearance \
     curl && \
     echo "**** install hakuneko ****" && \
   if [ -z ${HAKUNEKO_RELEASE+x} ]; then \

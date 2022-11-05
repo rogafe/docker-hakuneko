@@ -8,5 +8,5 @@ docker run \
   -p 3000:3000 \
   -v $(pwd)/appdata/$(date +%F)/config:/config \
   --restart unless-stopped \
-  --privileged 
+  --privileged \
   hakuneko:focal
